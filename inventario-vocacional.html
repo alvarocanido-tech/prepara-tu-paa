@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Explora tus intereses | UPB</title>
+<style>
+:root{--navy:#082b9f;--blue:#087fe5;--sky:#16a3f5;--ink:#102a75;--paper:#f7f8fb;--white:#fff;--muted:#697386;--line:#e5eaf2;--soft:#eef5ff;--shadow:0 16px 42px rgba(13,42,116,.12)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;color:#17233d;background:radial-gradient(circle at 10% 5%,rgba(8,127,229,.045),transparent 25%),radial-gradient(circle at 90% 30%,rgba(8,43,159,.035),transparent 28%),var(--paper);font:16px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+button{font:inherit;cursor:pointer}.topline{height:7px;background:linear-gradient(90deg,var(--navy),var(--blue),#36b6ff)}
+main{width:min(100% - 28px,900px);margin:auto;padding:20px 0 54px}
+.brand{display:flex;align-items:center;justify-content:center;gap:10px;margin:8px 0 24px;color:var(--navy);font-weight:950;letter-spacing:-2px;font-size:clamp(27px,6vw,39px)}
+.brandmark{width:39px;height:39px;border:5px solid var(--navy);border-radius:50%;display:inline-grid;place-items:center;position:relative}
+.brandmark:before,.brandmark:after{content:"";position:absolute;border:3px solid var(--navy);border-radius:50%;width:18px;height:18px;transform:rotate(45deg)}
+.brandmark:after{width:8px;height:8px;background:var(--navy)}
+.brand small{display:block;font-size:9px;letter-spacing:2px;line-height:1;text-align:right;margin-top:-3px}
+.hero{background:linear-gradient(125deg,var(--navy),#0757c8 68%,#0b8fe9);color:#fff;border-radius:30px;padding:clamp(24px,5vw,42px);box-shadow:var(--shadow);position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;width:240px;height:240px;border:30px solid rgba(255,255,255,.07);border-radius:50%;right:-80px;top:-100px}
+.kicker{font-size:.75rem;letter-spacing:1.7px;text-transform:uppercase;font-weight:850;opacity:.82}
+h1{font-size:clamp(2rem,7vw,3.35rem);line-height:1.02;letter-spacing:-1.6px;margin:12px 0}
+.hero p{max-width:650px;color:rgba(255,255,255,.88);margin:12px 0 0}
+.pill{display:inline-flex;align-items:center;gap:7px;background:#fff;color:var(--navy);padding:7px 13px;border-radius:999px;font-size:.8rem;font-weight:850;margin-top:20px}
+.panel{background:var(--white);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:clamp(18px,4vw,30px);margin-top:20px}
+h2{color:var(--ink);font-size:1.35rem;line-height:1.2;margin:0 0 10px}h3{color:var(--ink);margin:0;font-size:1.02rem}
+.small,.muted{color:var(--muted)}.small{font-size:.9rem}
+.introgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}
+.info{background:#f5f8ff;border:1px solid #e5edff;border-radius:16px;padding:15px}
+.info strong{display:block;color:var(--navy);font-size:.92rem;margin-bottom:4px}.info span{display:block;color:#64708a;font-size:.83rem}
+.note{border-left:4px solid var(--sky);background:#f0f8ff;padding:13px 15px;border-radius:0 13px 13px 0;color:#42516b;font-size:.9rem;margin:18px 0}
+.btn{background:linear-gradient(100deg,var(--blue),var(--navy));color:#fff;border:0;border-radius:14px;padding:13px 20px;font-weight:850;min-height:48px;box-shadow:0 7px 16px rgba(8,75,190,.2)}
+.btn.g{background:#fff;color:var(--navy);border:1.5px solid #b9cbed;box-shadow:none}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:20px}
+.bar{height:10px;background:#e8edf6;border-radius:20px;overflow:hidden;margin:10px 0 20px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--blue),#38b7ff);border-radius:20px}
+.card{background:#fff;border:1px solid var(--line);border-radius:19px;padding:16px;margin:13px 0;box-shadow:0 5px 18px rgba(13,42,116,.045)}
+.row{display:flex;gap:8px;align-items:center;padding:11px 0;border-top:1px solid #edf0f5}
+.row:first-of-type{border-top:0}.row span{flex:1;font-weight:650;font-size:.94rem;line-height:1.35}
+.row button{border:1px solid #d7e0ee;background:#fff;color:#506078;border-radius:11px;padding:8px 10px;min-width:66px;font-size:.78rem;font-weight:850}
+.row button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.row button:last-child.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.res{margin:16px 0}.res b{display:flex;justify-content:space-between;color:#1d315d;font-size:.93rem;margin-bottom:7px}
+.res .small{font-size:.82rem;margin-top:5px}
+.res .bar{height:12px;margin:0;background:#edf1f7}.res .bar i{background:linear-gradient(90deg,#0784e8,#1eb0ff)}
+.actions{display:flex;justify-content:space-between;gap:12px;margin-top:20px}
+.statusline{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:.82rem;font-weight:750;margin-bottom:8px}
+.disclaimer{background:#fff8e9;border:1px solid #f4e4bf;border-radius:14px;padding:14px;color:#6b5932;font-size:.87rem;margin-top:18px}
+.footer{text-align:center;color:#8992a3;font-size:.8rem;padding:28px 0 0}.footer strong{display:block;color:var(--navy);font-size:1.5rem;letter-spacing:-1px}
+.hidden{display:none!important}
+@media(max-width:620px){main{width:min(100% - 20px,900px);padding-top:13px}.brand{margin:6px 0 17px}.hero{border-radius:23px;padding:25px 21px}.introgrid{grid-template-columns:1fr;gap:8px}.info{display:flex;align-items:center;gap:12px;padding:11px 13px}.info strong{min-width:105px;margin:0}.panel{border-radius:20px;padding:17px}.row{gap:5px}.row span{font-size:.87rem;padding-right:3px}.row button{min-width:57px;padding:8px 6px;font-size:.73rem}.nav{position:sticky;bottom:8px;background:rgba(247,248,251,.94);padding:9px;border-radius:16px;z-index:4;backdrop-filter:blur(8px)}.nav button{flex:1}}
+@media print{body{background:#fff}.topline,.nav,.footer{display:none!important}main{width:100%;padding:0}.panel,.hero{box-shadow:none;break-inside:avoid}}
+</style></head><body>
+<div class="topline"></div>
+<main>
+  <div class="brand"><span class="brandmark" aria-hidden="true"></span><span>UPB<small>UNIVERSIDAD PRIVADA BOLIVIANA</small></span></div>
+  <section class="hero">
+    <div class="kicker">100 Becas para los 100 Mejores · Pre-Promo</div>
+    <h1>Explora tus<br>intereses.</h1>
+    <p>Descubre qué actividades despiertan tu curiosidad y conoce algunas áreas que podrían conectar con lo que te gusta.</p>
+    <div class="pill">✦ Inventario express de preferencias vocacionales</div>
+  </section>
+  <section id="welcome" class="panel">
+    <h2>¡Empecemos!</h2>
+    <p class="muted">Este ejercicio te presenta distintas actividades. No hay respuestas buenas ni malas: lo importante es responder según tus gustos, no según lo que otras personas esperan de ti.</p>
+    <div class="introgrid">
+      <div class="info"><strong>10 áreas</strong><span>Distintos campos de interés para explorar.</span></div>
+      <div class="info"><strong>Elección rápida</strong><span>En cada grupo eliges lo que más y menos te gusta.</span></div>
+      <div class="info"><strong>Tu resultado</strong><span>Un mapa inicial de tus preferencias.</span></div>
+    </div>
+    <div class="note"><strong>Importante:</strong> es una versión express y orientativa, no una prueba diagnóstica ni una decisión automática sobre tu carrera. Tus intereses pueden cambiar con el tiempo.</div>
+    <h3>¿Cómo responder?</h3>
+    <ul class="muted">
+      <li>Marca <b>Más</b> en la actividad que más te gustaría realizar.</li>
+      <li>Marca <b>Menos</b> en la que menos te gustaría realizar.</li>
+      <li>La tercera actividad queda sin marcar.</li>
+      <li>Debes elegir dos actividades diferentes en cada grupo.</li>
+    </ul>
+    <button class="btn" id="startBtn">Comenzar inventario →</button>
+  </section>
+  <section id="app" class="panel hidden"></section>
+  <footer class="footer"><strong>UPB</strong>Admisiones · Universidad Privada Boliviana<br>100 Becas para los 100 Mejores · Versión Pre-Promo</footer>
+</main>
+<script>
+const AREAS=[
+["Aire libre","Naturaleza, animales, agricultura y trabajo fuera de la oficina."],
+["Mecánica","Máquinas, equipos, tecnología práctica y reparación."],
+["Cálculo","Números, lógica, datos y finanzas."],
+["Científica","Investigación, laboratorio, salud y descubrimiento."],
+["Persuasiva","Ventas, liderazgo, negocios y comunicación para convencer."],
+["Artística","Diseño, imagen, creatividad visual y manual."],
+["Literaria","Escritura, lectura, periodismo y contar historias."],
+["Musical","Música, sonido, canto y espectáculo."],
+["Servicio social","Ayudar, enseñar, acompañar y cuidar a otras personas."],
+["Oficina","Organización, administración y trabajo ordenado y preciso."]];
+const IT=[
+["Cuidar y proteger un parque nacional","Trabajar como guardaparques en la selva","Criar ganado o animales de granja","Cultivar frutas y verduras","Ser guía de turismo de aventura","Trabajar en una estación meteorológica de montaña","Cuidar plantas en un vivero","Estudiar la vida de las abejas","Acampar y hacer senderismo seguido","Mejorar cultivos con nuevas técnicas de riego","Rescatar y cuidar animales silvestres","Plantar árboles para reforestar una zona","Ser agricultor o agricultora","Trabajar en una reserva natural","Analizar la tierra para ver qué se puede sembrar","Cuidar caballos en una hacienda","Pasar el día trabajando al aire libre"],
+["Arreglar una moto o un auto","Armar y desarmar una computadora","Reparar electrodomésticos","Diseñar y construir un robot","Instalar redes eléctricas","Manejar maquinaria pesada","Reparar celulares y tablets","Armar estructuras metálicas","Revisar frenos y motor de un vehículo","Construir un dron","Soldar piezas de metal","Revisar el motor de un avión","Montar un equipo de sonido","Mantener las máquinas de una fábrica","Averiguar por qué un aparato no funciona","Hacer instalaciones de agua y cañerías","Fabricar piezas con una impresora 3D"],
+["Resolver problemas de matemáticas","Hacer cálculos mentales rápidos","Analizar estadísticas y gráficos","Armar el presupuesto de un negocio","Calcular porcentajes y comisiones","Resolver acertijos lógicos","Armar fórmulas en una hoja de cálculo","Calcular cuánto cuesta producir algo","Analizar cómo suben y bajan los precios","Programar algoritmos","Estudiar estadística","Calcular los intereses de un préstamo","Descubrir patrones en los números","Ser analista de datos","Hacer proyecciones financieras","Calcular las medidas de una obra","Participar en olimpiadas de matemáticas"],
+["Investigar una vacuna nueva","Trabajar en un laboratorio de química","Observar las estrellas con un telescopio","Estudiar las causas de los terremotos","Hacer experimentos científicos","Investigar enfermedades y sus causas","Descubrir alimentos más nutritivos","Analizar muestras al microscopio","Estudiar cómo funciona el cerebro","Investigar cómo reducir la contaminación","Estudiar fósiles","Desarrollar nuevos medicamentos","Leer sobre descubrimientos científicos","Seguir un curso de biología","Estudiar el efecto del sol en la piel","Analizar la composición de un producto","Ir a una expedición científica"],
+["Crear una campaña de publicidad","Vender un producto y convencer a clientes","Dirigir un equipo de ventas","Promocionar una marca en redes sociales","Negociar acuerdos entre empresas","Presentar un proyecto a inversionistas","Ser vocero de una empresa","Montar mi propio negocio","Organizar un evento que atraiga mucha gente","Ser creador de contenido o influencer","Convencer a otros de apoyar una idea","Liderar una campaña por una causa","Descubrir qué quiere comprar la gente","Ser relacionista público","Debatir y defender una postura","Ofrecer servicios por cuenta propia","Dar charlas motivacionales"],
+["Pintar cuadros o murales","Diseñar ropa o calzado","Hacer ilustraciones digitales","Tomar y editar fotografías","Diseñar logos y afiches","Hacer esculturas o cerámica","Crear el vestuario de una obra de teatro","Dirigir cortometrajes","Decorar espacios","Diseñar telas y estampados","Dibujar una escena interesante","Diseñar el arte de un videojuego","Hacer animación 2D o 3D","Tallar madera","Diseñar la portada de un libro","Seguir un curso de cine","Hacer arreglos florales"],
+["Escribir cuentos o novelas","Escribir artículos para un periódico","Ser periodista","Escribir guiones de series o películas","Tener un blog o newsletter","Leer y analizar obras clásicas","Corregir y editar textos","Escribir poesía","Hacer un podcast de historias","Redactar discursos importantes","Ser crítico de libros o películas","Enseñar literatura","Traducir libros a otro idioma","Estar en un club de lectura","Publicar un libro","Escribir reseñas","Entrevistar personas y contar sus historias"],
+["Tocar guitarra, batería u otro instrumento","Cantar en un coro o una banda","Componer canciones","Producir música en el computador","Dirigir una orquesta o un grupo","Enseñar música a niños","Ser DJ en eventos","Estudiar teoría musical","Hacer música para videojuegos o películas","Grabar y mezclar sonido en un estudio","Aprender instrumentos tradicionales","Analizar conciertos y bandas","Hacer arreglos musicales","Actuar en un musical","Escribir letras de canciones","Formar parte de una banda","Aprender a tocar piano"],
+["Ayudar a niños con dificultades de aprendizaje","Ser voluntario en una ONG","Cuidar y acompañar a personas enfermas","Ser psicólogo(a) o consejero(a)","Organizar colectas para ayudar a otros","Trabajar con adultos mayores","Participar en campañas de salud","Ser trabajador(a) social","Enseñar en barrios con pocos recursos","Atender a personas con discapacidad","Escuchar a quien necesita desahogarse","Ayudar a familias en crisis","Trabajar en un hogar de niños","Apoyar a personas en su recuperación de adicciones","Defender los derechos de grupos vulnerables","Ser docente de colegio"],
+["Organizar archivos y documentos","Llevar la contabilidad de un negocio","Ser asistente ejecutivo(a)","Gestionar agendas y reuniones","Tomar notas y hacer actas","Trabajar con planillas administrativas","Verificar facturas y pagos","Mantener ordenado un inventario","Atender la recepción de una empresa","Escribir correos y reportes formales","Registrar datos en un sistema","Revisar documentos legales","Procesar el pago de sueldos","Coordinar trámites de comercio exterior","Controlar compras y entregas","Seguir procedimientos con precisión"]];
+const PER=8;let flat=[];IT.forEach((l,a)=>l.forEach(t=>flat.push({t,a})));
+function build(){let r=7;const rnd=()=>(r=(r*1103515245+12345)&0x7fffffff)/0x7fffffff;
+ const pool=IT.map((l,a)=>l.map(t=>({t,a})));pool.forEach(l=>{for(let i=l.length-1;i>0;i--){const j=Math.floor(rnd()*(i+1));[l[i],l[j]]=[l[j],l[i]]}});
+ const tr=[];while(pool.some(l=>l.length)){const o=pool.map((l,a)=>[l.length+rnd()*.9,a]).sort((x,y)=>y[0]-x[0]).slice(0,3);
+ if(o.some(x=>!pool[x[1]].length))break;const g=o.map(x=>pool[x[1]].pop());for(let i=2;i>0;i--){const j=Math.floor(rnd()*(i+1));[g[i],g[j]]=[g[j],g[i]]}tr.push(g)}return tr}
+const TR=build(),N=TR.length,PAGES=Math.ceil(N/PER);let page=0;const ans=TR.map(()=>({}));
+const app=document.getElementById("app");
+function done(i){const v=Object.values(ans[i]);return v.includes("m")&&v.includes("l")}
+function set(i,j,k){const a=ans[i];for(const x in a)if(a[x]===k)delete a[x];if(a[j]===(k=="m"?"l":"m"))delete a[j];a[j]=a[j]===k?undefined:k;if(a[j]===undefined)delete a[j];render()}
+function render(){const s=page*PER,e=Math.min(N,s+PER);let h=`<p class="small">Página ${page+1} de ${PAGES}. En cada grupo elige lo que <b>más</b> te gusta y lo que <b>menos</b> te gusta. La tercera opción queda sin marcar.</p>`;
+ for(let i=s;i<e;i++){h+=`<div class="card"><div class="small">Grupo ${i+1} de ${N}</div>`+TR[i].map((x,j)=>`<div class="row"><span>${x.t}</span><button class="${ans[i][j]=="m"?"on":""}" onclick="set(${i},${j},'m')">Más</button><button class="${ans[i][j]=="l"?"on":""}" onclick="set(${i},${j},'l')">Menos</button></div>`).join("")+`</div>`}
+ let all=true;for(let i=s;i<e;i++)if(!done(i))all=false;
+ h+=`<div class="nav"><button class="btn g" ${page?"":"disabled"} onclick="page--;render();scrollTo(0,0)">Anterior</button><button class="btn" ${all?"":"disabled"} onclick="${page<PAGES-1?"page++;render();scrollTo(0,0)":"result()"}">${page<PAGES-1?"Siguiente":"Ver resultados"}</button></div>`;app.innerHTML=h}
+function result(){const sc=Array(10).fill(0),mx=Array(10).fill(0);
+ TR.forEach((g,i)=>g.forEach((x,j)=>{const v=ans[i][j];mx[x.a]+=2;sc[x.a]+=v=="m"?2:v=="l"?0:1}));
+ const o=AREAS.map((a,i)=>({n:a[0],d:a[1],p:Math.round(sc[i]/mx[i]*100)})).sort((a,b)=>b.p-a.p);
+ app.innerHTML=`<div class="card"><h2>Tus áreas de mayor interés</h2><p>Tus tres áreas más fuertes son: <b>${o.slice(0,3).map(x=>x.n).join(", ")}</b>.</p>`+o.map(x=>`<div class="res"><b><span>${x.n}</span><span>${x.p}%</span></b><div class="bar"><i style="width:${x.p}%"></i></div><div class="small">${x.d}</div></div>`).join("")+`<p class="small">Este resultado muestra tus preferencias relativas, no tus habilidades. Úsalo como punto de partida para explorar carreras y conversar con un orientador.</p><button class="btn" onclick="location.reload()">Volver a empezar</button></div>`;scrollTo(0,0)}
+render();
+ app.classList.add("hidden");
+ document.getElementById("startBtn").addEventListener("click",()=>{
+   document.getElementById("welcome").classList.add("hidden");
+   app.classList.remove("hidden");
+   render();
+   window.scrollTo({top:0,behavior:"smooth"});
+ });
+</script></body></html>
